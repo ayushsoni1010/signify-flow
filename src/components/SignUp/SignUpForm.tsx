@@ -5,12 +5,14 @@ const SignUpForm = () => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
 
-  const handleEmailChange = (e) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleEmailChange = (e: any) => {
     setError("");
     setEmail(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleSubmit = (e: any) => {
     e.preventDefault();
 
     if (!email) {
