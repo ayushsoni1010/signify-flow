@@ -34,13 +34,8 @@ const NotificationsSection = () => {
           on-chain or when a dormant whale you care about becomes active.
         </p>
       </div>
-      <div
-        className="h-full overflow-x-scroll overflow-hidden scrollbar-hide"
-        // style={{
-        //   background:
-        //     "linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.92) 27.6%, #FFF 53.13%, rgba(255, 255, 255, 0.67) 81.77%, rgba(255, 255, 255, 0.00) 100%)",
-        // }}
-      >
+      <div className="h-full overflow-x-scroll overflow-hidden scrollbar-hide relative drop-shadow-xl">
+        <div className="absolute inset-0 background"></div>
         <div className="flex gap-[14px] w-[597px] pt-12 pl-[46px] pb-[84.5px]">
           <NotifyCard />
           <ChartCard />

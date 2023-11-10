@@ -25,3 +25,11 @@ select {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.background {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0) 80%
+  );
+}
