@@ -1,6 +1,6 @@
 const SignUpForm = () => {
   return (
-    <div className="flex flex-col items-center justify-center max-w-[365px] gap-6">
+    <div className="flex flex-col items-center justify-center max-w-[365px] gap-6 lg:mt-[47px]">
       <div className="flex flex-col items-center justify-center gap-8 pl-[13px] pr-[12px]">
         <h1 className="font-brand text-[39px] leading-[46.8px] font-medium text-brand-grey-300 pr-[14px]">
           Sign up for exclusive access.

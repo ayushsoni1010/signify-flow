@@ -13,7 +13,7 @@ const ChartCard: React.FunctionComponent = () => {
         </div>
       </div>
       <div className="flex flex-col gap-[14.6px] items-start">
-        <p className="font-brand text-[11.2px] leading-[120%] text-brand-grey-900 font-medium text-left">
+        <p className="font-brand text-[11.2px] leading-[120%] w-[148px] text-brand-grey-900 font-medium text-left">
           Notify me when any wallets move more than
         </p>
         <select

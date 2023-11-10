@@ -2,12 +2,16 @@ import layer from "../../assets/layer.svg";
 
 const LayerSection = () => {
   return (
-    <section className="mr-auto">
-      <div className="flex items-start justify-stretch -mt-8 md:-ml-[3%]">
+    <section className="mt-[61px]">
+      <div className="flex justify-between w-full">
         <div>
-          <img src={layer} alt="Layer" />
+          <img
+            src={layer}
+            alt="Layer"
+            className="rounded-xl border-[1.5px] border-solid border-[(255, 255, 255, 0.68)] shadow-brand-layer"
+          />
         </div>
-        <div className="flex flex-col gap-4 mt-12 items-end justify-end max-w-xs -ml-8">
+        <div className="flex flex-col gap-4 mt-[17px] mr-[68px] items-end max-w-xs">
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -27,11 +31,11 @@ const LayerSection = () => {
               />
             </svg>
           </span>
-          <h2 className="font-brand text-[31px] text-right text-[#F2F2F2] font-medium leading-[120%] drop-shadow-brand-text">
+          <h2 className="font-brand text-[31px] text-right text-brand-neutral-100 font-medium leading-[120%] drop-shadow-brand-text">
             Watch what the whales are doing
           </h2>
 
-          <p className="font-brand text-base text-right opacity-70 text-[#F2F2F2] font-medium leading-[120%]">
+          <p className="font-brand text-base text-right opacity-70 text-brand-neutral-100 font-medium leading-[120%]">
             All whales are not equal. Know exactly what the whales impacting
             YOUR portfolio are doing.
           </p>

@@ -3,7 +3,7 @@ import check from "../../assets/check.svg";
 
 const Clockcard: React.FunctionComponent = () => {
   return (
-    <div className="bg-white h-[171.5px] p-[14px] flex flex-col rounded-[8.4px] justify-between shadow-brand-notification">
+    <div className="bg-white w-[189.7px] h-[171.5px] p-[14px] flex flex-col rounded-[8.4px] justify-between shadow-brand-notification">
       <div className="flex justify-between items-start">
         <div>
           <img src={clock} alt="Clock" className="w-7 h-7" />

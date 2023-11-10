@@ -4,8 +4,8 @@ import Clockcard from "../notifications/Clockcard";
 
 const NotificationsSection = () => {
   return (
-    <div className="flex items-center -mt-10">
-      <div className="flex flex-col gap-4 items-start max-w-xs h-fit mt-10 mb-[11px]">
+    <div className="flex items-center justify-between w-full">
+      <div className="flex flex-col gap-4 max-w-xs h-fit mt-[42px] mb-[11px]">
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -25,17 +25,23 @@ const NotificationsSection = () => {
             />
           </svg>
         </span>
-        <h2 className="font-brand text-[31px] text-[#F2F2F2] font-medium leading-[120%] drop-shadow-brand-text">
+        <h2 className="font-brand text-[31px] text-brand-neutral-100 font-medium leading-[120%] drop-shadow-brand-text">
           Get notified when a highly correlated whale makes a move
         </h2>
 
-        <p className="font-brand text-base opacity-70 text-[#F2F2F2] font-medium leading-[120%]">
+        <p className="font-brand text-base opacity-70 text-brand-neutral-100 font-medium leading-[120%]">
           Find out when a certain whale moves more than any preset amount
           on-chain or when a dormant whale you care about becomes active.
         </p>
       </div>
-      <div className="w-full h-full pt-12 pl-[46px] overflow-x-scroll overflow-hidden scrollbar-hide">
-        <div className="flex gap-[14px] items-stretch w-[597px]">
+      <div
+        className="h-full overflow-x-scroll overflow-hidden scrollbar-hide"
+        // style={{
+        //   background:
+        //     "linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.92) 27.6%, #FFF 53.13%, rgba(255, 255, 255, 0.67) 81.77%, rgba(255, 255, 255, 0.00) 100%)",
+        // }}
+      >
+        <div className="flex gap-[14px] w-[597px] pt-12 pl-[46px] pb-[84.5px]">
           <NotifyCard />
           <ChartCard />
           <Clockcard />

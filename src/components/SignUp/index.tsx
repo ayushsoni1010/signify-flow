@@ -6,16 +6,16 @@ import TestimonialSection from "./TestimonialSection";
 const SignUpAuthLayout = () => {
   return (
     <section>
-      <div className="flex justify-center h-screen">
-        <div className="hidden lg:block lg:w-[57.62%] bg-brand-dark-grey overflow-hidden">
-          <div className="flex flex-col justify-center items-center mx-auto h-screen w-full pl-14 bg-brand-auth bg-no-repeat bg-cover">
+      <div className="flex justify-center h-screen lg:h-[1024px] 2xl:h-screen">
+        <div className="hidden lg:block lg:w-[57.62%] bg-brand-grey-900 overflow-hidden">
+          <div className="flex flex-col mx-auto md:h-[1024px] 2xl:h-screen w-full pl-[60px] pt-[44px] bg-brand-auth bg-no-repeat bg-cover z-20">
             <NotificationSection />
             <LayerSection />
-            <div className="pr-[62px] -mt-20 w-full">
-              <h2 className="font-brand text-2xl text-[#F2F2F2] text-right font-medium">
+            <div className="pr-[62px] mt-0.5 w-full">
+              <h2 className="font-brand my-5 text-[25px] leading-[30px] text-brand-neutral-100 text-right font-medium">
                 Testimonials
               </h2>
-              <hr className="bg-[rgba(229, 229, 230, 0.50)] mt-2 h-[1px]" />
+              <hr className="bg-brand-grey-50 mt-0.5 h-[1px]" />
             </div>
             <TestimonialSection />
           </div>
