@@ -4,7 +4,7 @@ import { testimonialsData } from "../testimonials/__testimonialsData";
 
 const TestimonialsSection = () => {
   return (
-    <div className="flex gap-10 items-end mt-6">
+    <div className="flex gap-10 items-end mt-6 w-full">
       <span>
         <svg
           xmlns="http://www.w3.org/2000/svg"

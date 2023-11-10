@@ -8,10 +8,10 @@ const SignUpAuthLayout = () => {
     <section>
       <div className="flex justify-center h-screen">
         <div className="hidden lg:block lg:w-[57.62%] bg-brand-dark-grey overflow-hidden">
-          <div className="flex flex-col h-screen w-full pl-14 bg-brand-auth bg-no-repeat bg-cover">
+          <div className="flex flex-col justify-center items-center mx-auto h-screen w-full pl-14 bg-brand-auth bg-no-repeat bg-cover">
             <NotificationSection />
             <LayerSection />
-            <div className="pr-[62px] -mt-16">
+            <div className="pr-[62px] -mt-20 w-full">
               <h2 className="font-brand text-2xl text-[#F2F2F2] text-right font-medium">
                 Testimonials
               </h2>

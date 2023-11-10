@@ -4,7 +4,7 @@ import Clockcard from "../notifications/Clockcard";
 
 const NotificationsSection = () => {
   return (
-    <div className="flex items-center -m-4">
+    <div className="flex items-center -mt-10">
       <div className="flex flex-col gap-4 items-start max-w-xs h-fit mt-10 mb-[11px]">
         <span>
           <svg
