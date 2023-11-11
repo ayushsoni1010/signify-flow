@@ -1,35 +1,60 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ITestimonial } from "../../types/testimonial";
 import TestimonialCard from "../testimonials";
 import { testimonialsData } from "../testimonials/__testimonialsData";
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartX = useRef(0);
+  const dragDeltaX = useRef(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === testimonialsData.length - 1 ? 0 : prevIndex + 1
-    );
+  const handleDragStart = (e: React.MouseEvent) => {
+    setIsDragging(true);
+
+    console.log(e.clientX, e.clientY);
+    dragStartX.current = e.clientX;
   };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonialsData.length - 1 : prevIndex - 1
-    );
+  const handleDragMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+
+    dragDeltaX.current = e.clientX - dragStartX.current;
+    const newIndex = currentIndex - Math.sign(dragDeltaX.current);
+
+    if (newIndex >= 0 && newIndex < testimonialsData.length) {
+      setCurrentIndex(newIndex);
+    }
+  };
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+    dragStartX.current = 0;
+    dragDeltaX.current = 0;
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 2000);
+    const handleResize = () => {
+      setCurrentIndex(0);
+    };
 
-    return () => clearInterval(interval); // Cleanup the interval on component unmount
-  }, [currentIndex]);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <section>
       <div>
-        <div className="flex gap-10 items-end mt-10 w-full">
+        <div
+          className="flex gap-10 items-end mt-10 w-full"
+          onMouseDown={handleDragStart}
+          onMouseMove={handleDragMove}
+          onMouseUp={handleDragEnd}
+          onMouseLeave={handleDragEnd}
+        >
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -46,13 +71,14 @@ const TestimonialsSection = () => {
           </span>
           <div className="w-full h-full overflow-x-scroll overflow-hidden scrollbar-hide">
             <div
-              className="flex gap-5 w-96 transition-transform duration-300 ease-in-out"
+              className="flex gap-5 max-w-xs transition-transform duration-300 ease-in-out"
               style={{
                 transform: `translateX(-${currentIndex * 100}%)`,
               }}
             >
               {testimonialsData.map((item: ITestimonial) => (
                 <TestimonialCard
+                  key={item.id}
                   id={item.id}
                   name={item.name}
                   title={item.title}
@@ -67,13 +93,19 @@ const TestimonialsSection = () => {
       <div className="mt-8 gap-10 top-1/2 transform -translate-y-1/2 flex justify-center w-full">
         <button
           className="top-1/2 transform -translate-y-1/2 bg-transparent font-bold"
-          onClick={prevSlide}
+          onClick={() =>
+            setCurrentIndex((prevIndex) => Math.max(0, prevIndex - 1))
+          }
         >
           {"←"}
         </button>
         <button
           className="top-1/2 transform -translate-y-1/2 bg-transparent font-bold"
-          onClick={nextSlide}
+          onClick={() =>
+            setCurrentIndex((prevIndex) =>
+              Math.min(prevIndex + 1, testimonialsData.length - 1)
+            )
+          }
         >
           {"→"}
         </button>
